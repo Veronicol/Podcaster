@@ -26,6 +26,7 @@ export const useGetPodcastList = () => {
     queryKey: [podcastListKey],
     queryFn: getPodcastList,
     select: (data) => mapPodcastListResponse(data),
+    staleTime: oneDayInMilisecs,
     refetchInterval: oneDayInMilisecs
   });
 };

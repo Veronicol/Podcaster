@@ -1,3 +1,4 @@
+import { PodcastCard } from '../components/PodcastCard';
 import { useGetPodcastList } from '../hooks';
 
 export const Home = () => {
@@ -7,19 +8,10 @@ export const Home = () => {
   
 
   return (
-    <div>Home:
-      <ul>
+    <div className='home-container'>
       {podcastList.map(currentPodcast => {
-        const { id, name, author, image } = currentPodcast;
-
-        return <li key={id}>
-          <img src={image} alt={image}/>
-          {name}
-          <div>Author: {author}</div>
-          </li>;
+        return <PodcastCard key={currentPodcast.id} podcast={currentPodcast} />;
       })}
-
-      </ul>
     </div>
   );
 };
