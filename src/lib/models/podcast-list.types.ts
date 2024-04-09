@@ -1,3 +1,5 @@
+/** --- API RESPONSE TYPES --- */
+
 export type PodcastListResponse = {
   feed: Feed;
 }
