@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+:root {
+  /* FONTS */
+  --font-base: "Montserrat", sans-serif;
+
+  --font-light: 400;
+  --font-medium: 500;
+  --font-bold: 600;
+
+  /* COLORS */
+  //App colors
+  --blue-dark: #373760;
+  --light-grey: rgb(245, 245, 245);
+  --medium-grey: rgb(220, 220, 220);
+
+  //Text
+  --text-color: var(--blue-dark);
+}

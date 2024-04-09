@@ -1,0 +1,78 @@
+/*********** ELEMENTS ***********/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: 1.5;
+  font-weight: var(--font-light);
+  color: var(--blue-dark);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+}
+
+h2,
+h3 {
+  letter-spacing: 0.05em;
+}
+
+header {
+  background-color: #fff;
+  font-size: 0.85em;
+  font-weight: var(--font-bold);
+  box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+  display: flex;
+  justify-content: flex-end;
+}
+
+select {
+  min-width: 12em;
+  padding: 0.3em;
+  border-radius: 0.5em;
+}
+
+section {
+  padding-bottom: 2em;
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+/******** BLOCKS ********/
+.content-container {
+  padding: 4em 5em;
+}
+
+.button {
+  color: var(--blue-dark);
+  background-color: var(--light-grey);
+  padding: 0.4em;
+  margin: 0.5em 0.5em 0.5em 0;
+  min-width: 6em;
+  border-radius: .5em;
+
+  &__selected {
+    font-weight: var(--font-bold);
+    background-color: var(--medium-grey);
+  }
+}
+
+.detail-container {
+  border: 1px solid var(--medium-grey);
+  border-radius: .5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2em;
+
+  span {
+    font-weight: var(--font-bold);
+  }
+}
