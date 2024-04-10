@@ -6,11 +6,6 @@ export type Episode = {
 };
 
 export type PodcastDetail = {
-  id: string;
-  name: string;
-  author: string;
-  image: string;
-  description: string;
   episodesCount: number;
   episodes: Episode[];
 };

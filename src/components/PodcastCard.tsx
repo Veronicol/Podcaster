@@ -16,7 +16,7 @@ export const PodcastCard = ({
       role="button"
     >
       <img src={image} alt={image} />
-      <div className="card-content">
+      <div className="card-content box">
         <div className="line-clamp">{name.toUpperCase()}</div>
         <div className="subtext">Author: {author}</div>
       </div>
