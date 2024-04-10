@@ -1,12 +1,12 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
 
-import { PodcastCard } from '../components/PodcastCard';
+import { PodcastCard } from '../components';
 import { useGetPodcastList } from '../hooks';
 import type { PodcastListItem } from '../models';
 import { getMatchingElements } from '../utils';
 
-export const Home = () => {
+export const PodcastList = () => {
   const [filteredList, setFilteredList] = useState<PodcastListItem[]>([]);
 
   const { data: resPodcastList } = useGetPodcastList();
@@ -27,7 +27,7 @@ export const Home = () => {
     console.log('ON CLICK PODCAST ', podcastId);
 
   return (
-    <div className="home-container">
+    <div className="podcast-list-container">
       {podcastList.length && (
         <>
           <div className="filter-container">

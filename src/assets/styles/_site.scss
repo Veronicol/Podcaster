@@ -46,7 +46,32 @@ section {
 }
 
 /******** BLOCKS ********/
-.home-container {
+
+.main-container {
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+  height: 2.5em;
+  background-color: var(--light-grey);
+  font-size: large;
+  color: var(--light-blue);
+  border-bottom: 1px solid var(--medium-grey);
+  box-shadow: 0.1em 0.1em 0.3em 0.1em var(--medium-grey);
+  z-index: 2;
+}
+
+.page-container {
+  margin-top: 5em;
+}
+
+.podcast-list-container {
   margin: 2em;
 }
 

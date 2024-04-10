@@ -1,11 +1,11 @@
 import './assets/styles/styles.scss';
-import { Home } from './pages';
+import { Layout } from './pages';
 
 function App() {
   return (
     <>
       <div>
-        <Home />
+        <Layout />
       </div>
     </>
   );
