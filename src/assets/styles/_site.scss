@@ -47,46 +47,57 @@ section {
 
 /******** BLOCKS ********/
 .home-container {
+  margin: 2em;
+}
+
+.filter-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: end;
+  align-items: center;
 }
 
 .card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6.6em 1em 1em;
+  margin-top: 6.6em;
 
   img {
     position: absolute;
     top: -3em;
     width: 8em;
+    height: 8em;
     border-radius: 50%;
     border: 1px solid var(--medium-grey);
     z-index: 1;
   }
 
-  .content-container {
+  .card-content {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1em;
-    padding-top: 6em;
+    padding: 6em 1em 1em 1em;
     border: 1px solid var(--medium-grey);
-    box-shadow: .2em .2em .2em .1em var(--medium-grey);
-    border-radius: .2em;
+    box-shadow: 0.2em 0.2em 0.2em 0.1em var(--medium-grey);
+    border-radius: 0.2em;
     width: 15em;
     height: 100%;
 
     .line-clamp {
       display: -webkit-box;
       -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; 
+      -webkit-box-orient: vertical;
       overflow: hidden;
-      text-overflow: ellipsis; 
+      text-overflow: ellipsis;
     }
 
     .line-clamp:hover {
@@ -96,9 +107,15 @@ section {
     }
 
     .subtext {
-      font-size: .8em;
+      font-size: 0.8em;
       color: var(--font-grey);
     }
+  }
+
+  .card-content:hover {
+    background-color: var(--light-grey);
+    border: 1px solid var(--medium-grey);
+    box-shadow: 0.2em 0.2em 0.4em 0.2em var(--medium-grey);
   }
 }
 

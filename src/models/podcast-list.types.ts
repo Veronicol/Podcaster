@@ -5,4 +5,4 @@ export type PodcastListItem = {
   name: string;
   author: string;
   image: string;
-}
+};

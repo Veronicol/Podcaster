@@ -4,9 +4,9 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "prettier"
   ],
   "settings": {
     "react": {
@@ -61,7 +61,6 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/no-unknown-property": "warn",
     "react/react-in-jsx-scope": "off",
-    // "react-refresh/only-export-components": "warn",
     "react/jsx-filename-extension": [
       1,
       {

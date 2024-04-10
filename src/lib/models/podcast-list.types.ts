@@ -2,22 +2,22 @@
 
 export type PodcastListResponse = {
   feed: Feed;
-}
+};
 
 interface Feed {
-  author:  Author;
-  entry:   Entry[];
+  author: Author;
+  entry: Entry[];
   updated: Icon;
-  rights:  Icon;
-  title:   Icon;
-  icon:    Icon;
-  link:    Link[];
-  id:      Icon;
+  rights: Icon;
+  title: Icon;
+  icon: Icon;
+  link: Link[];
+  id: Icon;
 }
 
 interface Author {
   name: Icon;
-  uri:  Icon;
+  uri: Icon;
 }
 
 interface Icon {
@@ -25,17 +25,17 @@ interface Icon {
 }
 
 interface Entry {
-  'im:name':        Icon;
-  'im:image':       IMImage[];
-  summary:          Icon;
-  'im:price':       IMPrice;
+  'im:name': Icon;
+  'im:image': IMImage[];
+  summary: Icon;
+  'im:price': IMPrice;
   'im:contentType': IMContentType;
-  rights?:          Icon;
-  title:            Icon;
-  link:             Link;
-  id:               ID;
-  'im:artist':      IMArtist;
-  category:         Category;
+  rights?: Icon;
+  title: Icon;
+  link: Link;
+  id: ID;
+  'im:artist': IMArtist;
+  category: Category;
   'im:releaseDate': IMReleaseDate;
 }
 
@@ -45,20 +45,20 @@ interface Category {
 
 interface CategoryAttributes {
   'im:id': string;
-  term:    PurpleLabel;
-  scheme:  string;
-  label:   PurpleLabel;
+  term: PurpleLabel;
+  scheme: string;
+  label: PurpleLabel;
 }
 
 enum PurpleLabel {
   Music = 'Music',
   MusicCommentary = 'Music Commentary',
   MusicHistory = 'Music History',
-  MusicInterviews = 'Music Interviews',
+  MusicInterviews = 'Music Interviews'
 }
 
 interface ID {
-  label:      string;
+  label: string;
   attributes: IDAttributes;
 }
 
@@ -67,7 +67,7 @@ interface IDAttributes {
 }
 
 interface IMArtist {
-  label:       string;
+  label: string;
   attributes?: IMArtistAttributes;
 }
 
@@ -80,16 +80,16 @@ interface IMContentType {
 }
 
 interface IMContentTypeAttributes {
-  term:  FluffyLabel;
+  term: FluffyLabel;
   label: FluffyLabel;
 }
 
 enum FluffyLabel {
-  Podcast = 'Podcast',
+  Podcast = 'Podcast'
 }
 
 interface IMImage {
-  label:      string;
+  label: string;
   attributes: IMImageAttributes;
 }
 
@@ -98,25 +98,25 @@ interface IMImageAttributes {
 }
 
 interface IMPrice {
-  label:      IMPriceLabel;
+  label: IMPriceLabel;
   attributes: IMPriceAttributes;
 }
 
 interface IMPriceAttributes {
-  amount:   string;
+  amount: string;
   currency: Currency;
 }
 
 enum Currency {
-  Usd = 'USD',
+  Usd = 'USD'
 }
 
 enum IMPriceLabel {
-  Get = 'Get',
+  Get = 'Get'
 }
 
 interface IMReleaseDate {
-  label:      Date;
+  label: Date;
   attributes: Icon;
 }
 
@@ -125,16 +125,16 @@ interface Link {
 }
 
 interface LinkAttributes {
-  rel:   Rel;
+  rel: Rel;
   type?: Type;
-  href:  string;
+  href: string;
 }
 
 enum Rel {
   Alternate = 'alternate',
-  Self = 'self',
+  Self = 'self'
 }
 
 enum Type {
-  TextHTML = 'text/html',
+  TextHTML = 'text/html'
 }
