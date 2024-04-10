@@ -1,13 +1,16 @@
+import { Outlet } from 'react-router-dom';
+
 import './assets/styles/styles.scss';
-import { Layout } from './pages';
+import { NavBar } from './components';
 
 function App() {
   return (
-    <>
-      <div>
-        <Layout />
+    <div className="main-container">
+      <NavBar />
+      <div className="page-container">
+        <Outlet />
       </div>
-    </>
+    </div>
   );
 }
 
