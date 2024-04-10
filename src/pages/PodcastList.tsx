@@ -1,12 +1,16 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import { PodcastCard } from '../components';
 import { useGetPodcastList } from '../hooks';
 import type { PodcastListItem } from '../models';
 import { getMatchingElements } from '../utils';
 
 export const PodcastList = () => {
+  const navigate = useNavigate();
+
   const [filteredList, setFilteredList] = useState<PodcastListItem[]>([]);
 
   const { data: resPodcastList } = useGetPodcastList();
@@ -23,8 +27,7 @@ export const PodcastList = () => {
     setFilteredList(matchingPodcasts);
   };
 
-  const onClickCard = (podcastId: string) =>
-    console.log('ON CLICK PODCAST ', podcastId);
+  const onClickCard = (podcastId: string) => navigate(`/podcast/${podcastId}`);
 
   return (
     <div className="podcast-list-container">

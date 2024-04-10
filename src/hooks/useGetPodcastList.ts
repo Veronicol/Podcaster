@@ -19,7 +19,7 @@ export const useGetPodcastList = () => {
         'im:image': image
       } = item;
       return {
-        id: id.label,
+        id: id.attributes['im:id'],
         name: name.label,
         author: author.label,
         image: image[0].label
@@ -31,7 +31,6 @@ export const useGetPodcastList = () => {
     queryKey: [podcastListKey],
     queryFn: getPodcastList,
     select: (data) => mapPodcastListResponse(data),
-    staleTime: oneDayInMilisecs,
     refetchInterval: oneDayInMilisecs
   });
 };

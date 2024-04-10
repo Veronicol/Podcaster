@@ -9,7 +9,8 @@ import {
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 10
+      staleTime: 1000 * 10,
+      refetchOnWindowFocus: false
     }
   },
   queryCache: new QueryCache({
