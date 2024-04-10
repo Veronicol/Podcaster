@@ -3,8 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import type { PodcastListResponse } from '../lib/models/podcast-list.types';
 import { getPodcastList, podcastListKey } from '../lib/services';
 import type { PodcastListItem } from '../models';
-
-const oneDayInMilisecs = 24 * 60 * 60 * 1000;
+import { oneDayInMilisecs } from '../utils';
 
 export const useGetPodcastList = () => {
   const mapPodcastListResponse = (
@@ -16,13 +15,15 @@ export const useGetPodcastList = () => {
         id,
         'im:name': name,
         'im:artist': author,
-        'im:image': image
+        'im:image': image,
+        summary
       } = item;
       return {
         id: id.attributes['im:id'],
         name: name.label,
         author: author.label,
-        image: image[0].label
+        image: image[0].label,
+        description: summary.label
       };
     });
   };
@@ -31,6 +32,7 @@ export const useGetPodcastList = () => {
     queryKey: [podcastListKey],
     queryFn: getPodcastList,
     select: (data) => mapPodcastListResponse(data),
+    staleTime: oneDayInMilisecs,
     refetchInterval: oneDayInMilisecs
   });
 };
