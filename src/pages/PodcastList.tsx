@@ -28,7 +28,7 @@ export const PodcastList = () => {
 
   return (
     <div className="podcast-list-container">
-      {podcastList.length && (
+      {!!podcastList.length && (
         <>
           <div className="filter-container">
             <div className="filter-counter">{filteredList.length}</div>
