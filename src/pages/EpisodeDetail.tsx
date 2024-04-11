@@ -1,3 +1,25 @@
+import { useParams } from 'react-router-dom';
+
+import { PodcastResumeCard } from '../components';
+import { useGetEpisodeDetail } from '../hooks';
+
 export const EpisodeDetail = () => {
-  return <div>EPISODE DETAIL</div>;
+  const { podcastId, episodeId } = useParams();
+
+  const episodeDetail = useGetEpisodeDetail(podcastId || '', episodeId || '');
+
+  return (
+    <>
+      {episodeDetail && (
+        <div className="detail-container">
+          <PodcastResumeCard />
+          <div className="episode-container box">
+            <div className="title">{episodeDetail.title}</div>
+            <div className="description">{episodeDetail.description}</div>
+            <audio controls src={episodeDetail.episodeUrl}></audio>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };

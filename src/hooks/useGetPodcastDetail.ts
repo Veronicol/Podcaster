@@ -12,10 +12,20 @@ export const useGetPodcastDetail = (podcastId: string) => {
     const { resultCount, results } = podcastDetailResponse;
 
     const mappedResults = results.map((result): Episode => {
-      const { trackId, trackName, releaseDate, trackTimeMillis } = result;
+      const {
+        trackId,
+        trackName,
+        releaseDate,
+        trackTimeMillis,
+        description,
+        episodeUrl
+      } = result;
+
       return {
         id: trackId.toString(),
         title: trackName,
+        description: description || '- -',
+        episodeUrl: episodeUrl || '',
         date: new Date(releaseDate).toLocaleDateString('en-GB'),
         duration: trackTimeMillis
           ? convertMillisecsToDateTime(trackTimeMillis)
