@@ -167,6 +167,8 @@ section {
   justify-content: center;
 }
 
+/** PODCAST RESUME **/
+
 .card-resume-container {
   display: flex;
   flex-direction: column;
@@ -179,6 +181,12 @@ section {
     width: 13em;
     height: 13em;
     border-radius: 0.5em;
+  }
+
+  img.clickable:hover {
+    width: calc(13em - 1px);
+    height: calc(13em - 1px);
+    border: 2px solid white;
   }
 
   .main-info-container {
@@ -197,6 +205,10 @@ section {
       font-size: medium;
       font-style: italic;
     }
+
+    .clickable:hover {
+      color: var(--light-blue);
+    }
   }
 
   .content-info-container {
@@ -213,6 +225,8 @@ section {
     }
   }
 }
+
+/** PODCAST DETAIL **/
 
 .episodes-container {
   display: flex;
@@ -266,7 +280,7 @@ section {
   }
 }
 
-// EPISODE
+/** EPISODE **/
 
 .episode-container {
   display: flex;
