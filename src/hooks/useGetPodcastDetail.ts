@@ -24,7 +24,7 @@ export const useGetPodcastDetail = (podcastId: string) => {
       return {
         id: trackId.toString(),
         title: trackName,
-        description: description || '- -',
+        description: description || '',
         episodeUrl: episodeUrl || '',
         date: new Date(releaseDate).toLocaleDateString('en-GB'),
         duration: trackTimeMillis

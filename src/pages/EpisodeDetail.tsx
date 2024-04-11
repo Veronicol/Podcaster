@@ -21,7 +21,11 @@ export const EpisodeDetail = () => {
           <div className="episode-container box">
             <div className="title">{episodeDetail.title}</div>
             <div className="description">{parsedDescription}</div>
-            <audio controls src={episodeDetail.episodeUrl}></audio>
+            {episodeDetail.episodeUrl ? (
+              <audio controls src={episodeDetail.episodeUrl}></audio>
+            ) : (
+              <div>Ooops... No audio available</div>
+            )}
           </div>
         </div>
       )}
