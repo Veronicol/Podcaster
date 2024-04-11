@@ -14,7 +14,7 @@ const queryClient = new QueryClient({
     }
   },
   queryCache: new QueryCache({
-    onError: (error, query) => {
+    onError: (_, query) => {
       if (query.meta?.errorMessage) {
         console.error(query.meta.errorMessage);
       }
