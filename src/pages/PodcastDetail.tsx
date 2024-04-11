@@ -8,18 +8,14 @@ export const PodcastDetail = () => {
   const navigate = useNavigate();
 
   const { data: podcastDetail } = useGetPodcastDetail(podcastId || '');
-  console.log(
-    '🚀 ~ PodcastDetail ~ podcastDetail:',
-    podcastDetail?.episodes.map((ep) => ep.description)
-  );
 
   const navigateToEpisode = (episodeId: string) =>
     navigate(`/podcast/${podcastId}/episode/${episodeId}`);
 
   return (
-    <>
-      {podcastDetail && (
-        <div className="detail-container">
+    <div className="detail-container">
+      {podcastDetail ? (
+        <>
           <PodcastResumeCard />
           <div className="episodes-container">
             <div className="episodes-counter box">
@@ -51,8 +47,10 @@ export const PodcastDetail = () => {
               })}
             </div>
           </div>
-        </div>
+        </>
+      ) : (
+        <div>Ooops... detail not available</div>
       )}
-    </>
+    </div>
   );
 };

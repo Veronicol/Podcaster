@@ -42,15 +42,19 @@ export const PodcastList = () => {
             />
           </div>
           <div className="card-container">
-            {filteredList.map((currentPodcast) => {
-              return (
-                <PodcastCard
-                  key={currentPodcast.id}
-                  podcast={currentPodcast}
-                  onPodcastSelect={onClickCard}
-                />
-              );
-            })}
+            {filteredList.length ? (
+              filteredList.map((currentPodcast) => {
+                return (
+                  <PodcastCard
+                    key={currentPodcast.id}
+                    podcast={currentPodcast}
+                    onPodcastSelect={onClickCard}
+                  />
+                );
+              })
+            ) : (
+              <div>No results found</div>
+            )}
           </div>
         </>
       )}

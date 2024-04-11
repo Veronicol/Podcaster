@@ -14,9 +14,9 @@ export const EpisodeDetail = () => {
   );
 
   return (
-    <>
-      {episodeDetail && (
-        <div className="detail-container">
+    <div className="detail-container">
+      {episodeDetail ? (
+        <>
           <PodcastResumeCard />
           <div className="episode-container box">
             <div className="title">{episodeDetail.title}</div>
@@ -24,11 +24,13 @@ export const EpisodeDetail = () => {
             {episodeDetail.episodeUrl ? (
               <audio controls src={episodeDetail.episodeUrl}></audio>
             ) : (
-              <div>Ooops... No audio available</div>
+              <div>Ooops... audio not available</div>
             )}
           </div>
-        </div>
+        </>
+      ) : (
+        <div>Ooops... episode not available</div>
       )}
-    </>
+    </div>
   );
 };
