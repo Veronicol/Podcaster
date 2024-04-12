@@ -1,7 +1,13 @@
 import { useGetPodcastDetail } from './useGetPodcastDetail';
 
 export const useGetEpisodeDetail = (podcastId: string, episodeId: string) => {
-  const { data: podcastDetail } = useGetPodcastDetail(podcastId || '');
+  const { data: podcastDetail, isLoading } = useGetPodcastDetail(
+    podcastId || ''
+  );
 
-  return podcastDetail?.episodes.find((episode) => episode.id === episodeId);
+  const episodeDetail = podcastDetail?.episodes.find(
+    (episode) => episode.id === episodeId
+  );
+
+  return { episodeDetail, isLoading };
 };
